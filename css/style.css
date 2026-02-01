@@ -150,6 +150,41 @@ button:hover {
   background: #ff5d8f;
   transform: scale(1.05);
 }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  background: rgba(255,255,255,0.9);
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  animation: fadeIn 1.2s ease;
+}
+
+.nav a {
+  display: inline-block;
+  margin: 8px;
+  padding: 10px 16px;
+  background: #ff8fab;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  background: #ff5d8f;
+  transform: scale(1.05);
+}
+
 
 
 
