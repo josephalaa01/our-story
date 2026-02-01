@@ -1,10 +1,12 @@
 <h2>رسالة ليكي ❤️</h2>
 
-<p id="letter">
-  يا Eereny…  
-  انتي مش بس حبيبتي، انتي بيتي.
-  <br><br>
-  You are my safe place, my heart, my forever.
-</p>
+<p id="letter"></p>
+
+<script>
+document.getElementById("letter").innerText =
+  localStorage.getItem("loveLetter") ||
+  "يا Eereny… انتي بيتي وأماني ❤️";
+</script>
 
 <a href="settings.html">✏️ Edit Text</a>
+
