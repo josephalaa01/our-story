@@ -1,0 +1,47 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f8cdda, #cdb4db);
+  height: 100vh;
+  margin: 0;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background: rgba(255,255,255,0.9);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  animation: fadeIn 1.5s ease;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  margin: 10px 0;
+}
+
+button {
+  background: #ff8fab;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff5d8f;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
