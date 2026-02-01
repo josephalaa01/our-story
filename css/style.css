@@ -111,6 +111,16 @@ button:hover {
   border-radius: 15px;
 }
 
+@media (max-width: 600px) {
+  .login-box {
+    width: 90%;
+  }
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
 
 
 
