@@ -1,25 +1,140 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>Home 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home 💖 | Joseph & Eereny</title>
 
-  <!-- تأكد إن المسار ده صح -->
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* 1. تهيئة الصفحة والألوان */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      /* خلفية متدرجة رومانسية ومتحركة */
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden; /* عشان مفيش سكرول يظهر غلط */
+    }
+
+    /* 2. تصميم الكارت الزجاجي */
+    .card {
+      background: rgba(255, 255, 255, 0.65); /* شفافية */
+      backdrop-filter: blur(10px); /* تغبيش الخلفية ورا الكارت */
+      -webkit-backdrop-filter: blur(10px);
+      padding: 3rem 2rem;
+      border-radius: 25px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      animation: floatUp 1s ease-out forwards; /* انيميشن الظهور */
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    /* 3. النصوص والتايبوجرافي */
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: #d63384; /* لون وردي غامق */
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+
+    p {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    #counter {
+      font-weight: 600;
+      color: #c84b7e;
+      font-size: 1.2rem;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+
+    /* 4. الروابط والأزرار */
+    .nav {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #444;
+      background: white;
+      padding: 12px 20px;
+      border-radius: 50px; /* شكل كبسولة */
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* تأثيرات الحركة عند اللمس أو الماوس */
+    .nav a:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 5px 15px rgba(214, 51, 132, 0.2);
+      color: #d63384;
+      background: #fff0f6;
+    }
+
+    .nav a:active {
+      transform: scale(0.98);
+    }
+
+    /* 5. الأنيميشن */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes floatUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 
-<body class="center">
+<body>
 
   <div class="card">
     <h1>Joseph & Eereny 💕</h1>
 
     <p>
-      أهلاً بيكي في حكايتنا…  
-      <br>
-      Welcome to our love story ✨
+      أهلاً بيكي في حكايتنا… <br>
+      <span style="font-size: 0.9em; color: #777;">Welcome to our love story ✨</span>
     </p>
 
-    <p id="counter"></p>
+    <div id="counter">جاري الحساب...</div>
 
     <div class="nav">
       <a href="love-letter.html">💌 Love Letter</a>
@@ -32,11 +147,21 @@
   </div>
 
   <script>
-    const start = new Date("2022-12-30");
-    const now = new Date();
-    const days = Math.floor((now - start) / (1000 * 60 * 60 * 24));
-    document.getElementById("counter").innerText =
-      `❤️ ${days} يوم حب وعدّوا`;
+    // التأكد من تحميل الصفحة بالكامل قبل تشغيل الكود
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      const start = new Date("2022-12-30");
+      const now = new Date();
+      
+      // حساب الفرق بالمللي ثانية وتحويله لأيام
+      const timeDiff = now - start;
+      const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      
+      // أنيميشن بسيط للعداد لما الصفحة تفتح
+      const counterElement = document.getElementById("counter");
+      counterElement.innerHTML = `❤️ بقالنا <strong>${days}</strong> يوم سوا`;
+      
+    });
   </script>
 
 </body>
