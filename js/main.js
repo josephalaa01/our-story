@@ -2,6 +2,15 @@ function checkPassword() {
   const pass = document.getElementById("password").value;
 
   if (pass === "30122022") {
+  document.querySelector(".login-box").style.display = "none";
+  document.getElementById("loader").classList.remove("hidden");
+
+  setTimeout(() => {
+    window.location.href = "home.html";
+  }, 2000);
+}
+
+  if (pass === "30122022") {
     localStorage.setItem("auth", "true");
     window.location.href = "home.html";
   } else {
@@ -18,4 +27,5 @@ setInterval(() => {
 
   setTimeout(() => heart.remove(), 6000);
 }, 500);
+
 
