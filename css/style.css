@@ -63,4 +63,20 @@ button:hover {
     opacity: 0;
   }
 }
+.loader {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #f8cdda, #cdb4db);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: white;
+  z-index: 999;
+}
+
+.hidden {
+  display: none;
+}
+
 
